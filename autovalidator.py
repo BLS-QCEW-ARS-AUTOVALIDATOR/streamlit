@@ -277,6 +277,8 @@ if st.button("Run Script"):
           st.write(df5['Web_ID'])
           st.write(WEB_ID)
           df6 = df5[df5['Web_ID'].str.contains(WEB_ID)]
+          if (len(df6) == 0):
+               df6 = df5
           df6['Form Identification'] = 'BLS 3023 - Industry Verification Form'
           df6['OMB_Clearance_Information'] = 'O.M.B. No. 1220-0032'
           df6 = df6.reset_index(drop = True)

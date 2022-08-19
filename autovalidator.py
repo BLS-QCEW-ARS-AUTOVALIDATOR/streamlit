@@ -272,6 +272,7 @@ if st.button("Run Script"):
                     df5['BMA_Area_Code_1'].iloc[j] = '0' + df5['BMA_Area_Code_1'].iloc[j]
                while len(df5['BMA_Area_Code_2'].iloc[j]) < 4:
                     df5['BMA_Area_Code_2'].iloc[j] = '0' + df5['BMA_Area_Code_2'].iloc[j]
+          st.write(df5)
           WEB_ID = str(output[output.index('WEB ID:') + 8: output.index('WEB ID: ') + 20])
           df6 = df5[df5['Web_ID'].str.contains(WEB_ID)]
           df6['Form Identification'] = 'BLS 3023 - Industry Verification Form'

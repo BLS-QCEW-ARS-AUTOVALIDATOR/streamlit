@@ -47,7 +47,7 @@ def xa_cleaning(s):
      
 def compare_dict(df6, proofs_dictionary):
     counter = 0
-    if (proofs_dictionary['Web_ID'] == df6['Web_ID']):
+    if (proofs_dictionary['Web_ID'] == df6['Web_ID'].iloc[0]):
         pass
     else:
         st.write('Wrong Web_ID')

@@ -47,6 +47,13 @@ def xa_cleaning(s):
      
 def compare_dict(df6, proofs_dictionary):
     counter = 0
+    if (proofs_dictionary['Web_ID'] == df6['Web_ID']):
+        pass
+    else:
+        st.write('Wrong Web_ID')
+        st.write("Proof's Web_ID = " + proofs_dictionary['Web_ID'])
+        st.write("Correct Web_ID = " + df6['Web_ID'])
+        counter = 1
     if (proofs_dictionary['Form Identification'] == 'BLS 3023 - Industry Verification Form'):
         pass
     else:
@@ -283,6 +290,7 @@ if st.button("Run Script"):
           df6['OMB_Clearance_Information'] = 'O.M.B. No. 1220-0032'
           df6 = df6.reset_index(drop = True)
           st.write(df6)
+          proofs_dictionary['Web_ID'] = WEB_ID
           data = tb.read_pdf(proofs_data, area = (150, 400, 180, 600), pages = i)
           if (notice == 'Second Notice'):
                if (data[0].columns[0] == 'SECOND NOTICE'):
